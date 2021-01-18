@@ -292,6 +292,7 @@ public class UCrop {
         public static final String EXTRA_UCROP_WIDGET_CROP_DRAWABLE = EXTRA_PREFIX + ".UcropToolbarCropDrawable";
 
         public static final String EXTRA_UCROP_LOGO_COLOR = EXTRA_PREFIX + ".UcropLogoColor";
+        public static final String EXTRA_UCROP_TITLE_COLOR = EXTRA_PREFIX + ".UcropTitleColor";
 
         public static final String EXTRA_HIDE_BOTTOM_CONTROLS = EXTRA_PREFIX + ".HideBottomControls";
         public static final String EXTRA_FREE_STYLE_CROP = EXTRA_PREFIX + ".FreeStyleCrop";
@@ -494,6 +495,13 @@ public class UCrop {
          */
         public void setLogoColor(@ColorInt int color) {
             mOptionBundle.putInt(EXTRA_UCROP_LOGO_COLOR, color);
+        }
+
+        /**
+         * @param color - desired resolved color of logo fill (default is darker grey)
+         */
+        public void setTitleColor(@ColorInt int color) {
+            mOptionBundle.putInt(EXTRA_UCROP_TITLE_COLOR, color);
         }
 
         /**

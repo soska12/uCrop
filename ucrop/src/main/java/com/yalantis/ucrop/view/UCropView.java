@@ -6,6 +6,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.callback.CropBoundsChangeListener;
@@ -17,6 +18,7 @@ public class UCropView extends FrameLayout {
 
     private GestureCropImageView mGestureCropImageView;
     private final OverlayView mViewOverlay;
+    private final ImageView mSiluetteOverlay;
 
     public UCropView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -28,6 +30,7 @@ public class UCropView extends FrameLayout {
         LayoutInflater.from(context).inflate(R.layout.ucrop_view, this, true);
         mGestureCropImageView = findViewById(R.id.image_view_crop);
         mViewOverlay = findViewById(R.id.view_overlay);
+        mSiluetteOverlay = findViewById(R.id.siluette);
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ucrop_UCropView);
         mViewOverlay.processStyledAttributes(a);
