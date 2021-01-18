@@ -95,8 +95,11 @@ public class UCropActivity extends AppCompatActivity {
     @DrawableRes
     private int mToolbarCancelDrawable;
     @DrawableRes
+    private int mSiluetteDrawable;
+    @DrawableRes
     private int mToolbarCropDrawable;
     private int mLogoColor;
+    private int mTitleColor;
 
     private boolean mShowBottomControls;
     private boolean mShowLoader = true;
@@ -295,6 +298,7 @@ public class UCropActivity extends AppCompatActivity {
         mToolbarTitle = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_TITLE_TEXT_TOOLBAR);
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
         mLogoColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_LOGO_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_default_logo));
+        mSiluetteDrawable = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_SILUETTE,  R.drawable.photooverlay);
         mShowBottomControls = !intent.getBooleanExtra(UCrop.Options.EXTRA_HIDE_BOTTOM_CONTROLS, false);
         mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background));
 
@@ -363,6 +367,8 @@ public class UCropActivity extends AppCompatActivity {
         mOverlayView = mUCropView.getOverlayView();
 
         mGestureCropImageView.setTransformImageListener(mImageListener);
+
+        mUCropView.setSiluetteOverlay(mSiluetteDrawable);
 
         ((ImageView) findViewById(R.id.image_view_logo)).setColorFilter(mLogoColor, PorterDuff.Mode.SRC_ATOP);
 

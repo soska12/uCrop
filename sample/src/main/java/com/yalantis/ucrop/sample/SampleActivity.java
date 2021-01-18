@@ -308,6 +308,9 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         }
         options.setCompressionQuality(mSeekBarQuality.getProgress());
 
+        options.setSiluetteDrawable(R.drawable.photooverlay);
+
+
         options.setHideBottomControls(mCheckBoxHideBottomControls.isChecked());
         options.setFreeStyleCropEnabled(mCheckBoxFreeStyleCrop.isChecked());
 

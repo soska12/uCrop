@@ -12,6 +12,7 @@ import com.yalantis.ucrop.R;
 import com.yalantis.ucrop.callback.CropBoundsChangeListener;
 import com.yalantis.ucrop.callback.OverlayViewChangeListener;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 
 public class UCropView extends FrameLayout {
@@ -40,6 +41,11 @@ public class UCropView extends FrameLayout {
 
         setListenersToViews();
     }
+
+    public void setSiluetteOverlay(int resId) {
+        mSiluetteOverlay.setImageResource(resId);
+    }
+
 
     private void setListenersToViews() {
         mGestureCropImageView.setCropBoundsChangeListener(new CropBoundsChangeListener() {

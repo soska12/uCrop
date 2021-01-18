@@ -19,9 +19,9 @@
 
     <ImageView
         android:id="@+id/siluette"
-        android:background="@drawable/photooverlay"
+        android:src="@drawable/photooverlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/ucrop_padding_crop_frame"/>
+        android:padding="30dp"/>
 
 </merge>
